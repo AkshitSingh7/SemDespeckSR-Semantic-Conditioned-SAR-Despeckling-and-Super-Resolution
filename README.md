@@ -1,4 +1,4 @@
-# SAR-WaveSRNet
+# SemDespeckSR-Semantic-Conditioned-SAR-Despeckling-and-Super-Resolution
 
 **Joint SAR Despeckling and Super-Resolution via Wavelet-Conditioned ESRGAN with Semantic Scene Conditioning**
 
