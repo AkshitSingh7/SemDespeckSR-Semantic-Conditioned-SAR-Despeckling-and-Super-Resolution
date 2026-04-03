@@ -1,0 +1,39 @@
+# SAR-WaveSRNet Configuration
+
+data:
+  patch_size: 128
+  stride: 64
+  scale: 2
+  speckle_looks: 1
+  nisar_dataset: "science/LSAR/GCOV/grids/frequencyA/HHHH"
+
+model:
+  in_nc: 1
+  out_nc: 1
+  nf: 64
+  nb: 16
+  gc: 32
+  scale: 2
+  wave: "haar"
+  embed_dim: 512
+
+training:
+  phase1:
+    epochs: 150
+    batch_size: 256
+    lr: 0.0002
+    scheduler: cosine
+    loss_weights:
+      l1: 1.0
+      ssim: 0.5
+      edge: 0.3
+
+clip:
+  model: "ViT-B-32"
+  pretrained: "laion2b_s34b_b79k"
+
+metrics:
+  - PSNR
+  - SSIM
+  - ENL
+  - EPD
